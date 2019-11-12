@@ -1,0 +1,28 @@
+#!groovy
+node {
+	tools{
+	    maven 'M3'
+	    jdk 'JDK11'
+	}
+	stages{
+	    stage('init') {
+	      checkout scm
+	    }
+		stage('Build'){
+		     sh '''
+		     	mvn clean package -DskipTests=true
+		     	mv target/*.war target/ROOT.war
+		     '''
+		}
+		stage('test'){
+
+		}
+		stage('deploy') {
+			sh'''
+				mvn azure-webapp:deploy
+			'''
+	  		azureWebAppPublish azureCredentialsId: env.AZURE_CRED_ID,
+	  		resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "**/ROOT.war"
+		}
+　   }
+}
