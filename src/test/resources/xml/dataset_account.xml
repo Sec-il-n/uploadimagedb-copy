@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE dataset SYSTEM "test.dtd"> -->
+<!-- <!DOCTYPE configuration> -->
+<dataset>
+  <ACCOUNT userId="Shima5" pass="135790" name="島紀香" age="34"/>
+  <ACCOUNT userId="Shima1" pass="1111111" name="島一郎" age="45"/>
+  <ACCOUNT userId="Shima2" pass="222s222" name="島二郎" age="75"/>
+  <ACCOUNT userId="Shima4" pass="222s444" name="島士郎" age="25"/>
+</dataset>

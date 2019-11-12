@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jp.sec.portfolio</groupId>
+  <artifactId>uploadimagedb2</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>uploadimagedb2</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <maven.compiler.release>11</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    <!-- assert -->
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-library</artifactId>
+      <version>2.2-rc1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.12.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>3.0.0</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- <dependency>
+	    <groupId>org.hamcrest</groupId>
+	    <artifactId>hamcrest-all</artifactId>
+	    <version>1.3</version>
+	    <scope>test</scope>
+	</dependency> -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.9</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.3.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-catalina</artifactId>
+      <version>9.0.22</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat</artifactId>
+      <version>9.0.24</version>
+      <type>pom</type>
+    </dependency>
+    <!-- org.hamcrestより上にしないこと!! -->
+    <!-- <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency> -->
+    <!-- to use org.junit.assert-->
+    <!-- JUnit5 -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.5.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.5.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-launcher</artifactId>
+      <version>1.5.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>5.5.2</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- junit4 -->
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <!--  実行-->
+      <version>5.5.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-migrationsupport</artifactId>
+      <version>5.5.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-runner</artifactId>
+      <version>1.5.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!--JWebunit  -->
+    <dependency>
+      <groupId>net.sourceforge.jwebunit</groupId>
+      <artifactId>jwebunit-core</artifactId>
+      <version>3.3</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.dbunit</groupId>
+      <artifactId>dbunit</artifactId>
+      <version>2.6.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.199</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.17</version>
+    </dependency>
+    <!-- -->
+    <!-- <dependency>
+	    <groupId>org.apache.taglibs</groupId>
+	    <artifactId>taglibs-standard-impl</artifactId>
+	    <version>1.2.5</version>
+	</dependency> -->
+    <!-- javaEE included the servlet api-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>2.3.3</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- for JSTL-->
+    <dependency>
+      <groupId>javax.servlet.jsp.jstl</groupId>
+      <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+      <version>1.2.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-jasper-el</artifactId>
+      <version>9.0.24</version>
+    </dependency>
+    <!--  standard.jar (⤴need both of them︎)-->
+    <dependency>
+      <groupId>org.apache.taglibs</groupId>
+      <artifactId>taglibs-standard-impl</artifactId>
+      <version>1.2.5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.mockrunner</groupId>
+      <artifactId>mockrunner-servlet</artifactId>
+      <version>2.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>5.1.9.RELEASE</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>5.1.9.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>5.1.9.RELEASE</version>
+    </dependency>
+    <!-- 1017 Jenkinsのbuild error で一時コメントアウト testで使用しているか確認 -->
+    <!-- <dependency>
+      <groupId>jp.osdn.dl.jaist</groupId>
+      <artifactId>dbunitng</artifactId>
+      <version>0.6</version>
+      <scope>test</scope>
+    </dependency> -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.0-alpha0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-nop</artifactId>
+      <version>2.0.0-alpha0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>properties-maven-plugin</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>sql-maven-plugin</artifactId>
+      <version>1.5</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>javax.activation-api</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+    <!-- 404error  -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>5.1.9.RELEASE</version>
+    </dependency>
+    <!-- aws -->
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk</artifactId>
+      <version>1.11.637</version>
+    </dependency>
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-s3</artifactId>
+      <version>1.11.637</version>
+    </dependency>
+    <dependency>
+      <groupId>com.scireum</groupId>
+      <artifactId>s3ninja</artifactId>
+      <version>2.7</version>
+    </dependency>
+    <dependency>
+      <groupId>com.opencsv</groupId>
+      <artifactId>opencsv</artifactId>
+      <version>4.6</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sourceforge.jwebunit</groupId>
+      <artifactId>jwebunit-htmlunit-plugin</artifactId>
+      <version>3.3</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- selenium -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.0.0-alpha-2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-chrome-driver</artifactId>
+      <version>4.0.0-alpha-2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+          <configuration>
+            <release>11</release>
+            <!-- <source>1.8</source>
+            <target>1.8</target> -->
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.3</version>
+          <configuration>
+            <webResources>
+              <resource>
+                <!-- this is relative to the pom.xml directory -->
+                <directory>${basedir}/src/main/resources</directory>
+              </resource>
+            </webResources>
+            <!-- switch each environment 最下部<properties>で詳細設定-->
+            <!-- <lOnMissingWebXml>false</lOnMissingWebXml>
+            <webXml>${webxml.path}</webXml> -->
+          </configuration>
+        </plugin>
+        <!-- compile java8 but need to run the tests with Java 11 -->
+        <!-- Runs the JUnit unit tests. Creates test reports. -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+          <!-- java11 :need omly heavy using reflection↓(念の為)-->
+          <configuration>
+            <argLine>--illegal-access=permit</argLine>
+          </configuration>
+        </plugin>
+        <!-- run Maven-webapp in Tomcat -->
+        <!-- start with mvn org.codehaus.cargo:cargo-maven2-plugin:run -->
+        <plugin>
+          <groupId>org.codehaus.cargo</groupId>
+          <artifactId>cargo-maven2-plugin</artifactId>
+          <version>1.7.7</version>
+          <configuration>
+            <container>
+              <containerId>tomcat9x</containerId>
+              <type>embedded</type>
+            </container>
+          </configuration>
+        </plugin>
+        <!-- It uses maven-plugin-tomcat7 to deploy on a separated running tomcat9 -->
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.2</version>
+          <!-- Maven のプラグインはプラグインの構成を <configuration> 要素を使って公開する -->
+          <configuration>
+            <!-- 属性 -->
+            <!-- <path>/upload_image_db4</path> -->
+            <path>/${project.artifactId}</path>
+            <!-- =↑動作確認済み -->
+            <!--以下manager使用の時のみ -->
+            <!-- <server>tomcat-localhost</server> -->
+            <server>TomcatServer</server>
+            <url>http://localhost:8080/manager/text</url>
+            <!-- defalt(tomcat-localhost)-->
+            <!-- 以下本来setting.xmlか? (<servers>)-->
+            <username>tomcat</username>
+            <password>password</password>
+            <!-- <contextFile>${basedir}/src/main/resources/context.xml</contextFile> -->
+            <contextFile>${basedir}/src/main/webapp/META-INF/context.xml</contextFile>
+            <useTestClasspath>false</useTestClasspath>
+            <systemProperties>
+              <systemProperty>
+                <name>maven.tomcat.port</name>
+                <value>8090</value>
+                <!-- ?? -->
+              </systemProperty>
+            </systemProperties>
+          </configuration>
+          <executions>
+            <execution>
+              <id>tomcat7-run</id>
+              <goals>
+                <goal>run-war-only</goal>
+              </goals>
+              <phase>package</phase>
+            </execution>
+            <execution>
+              <id>tomcat-shutdown</id>
+              <goals>
+                <goal>shutdown</goal>
+              </goals>
+              <phase>deploy</phase>
+              <configuration>
+                <fork>true</fork>
+                <port>8090</port>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <!--以下２つ  http://www.nagaseyasuhito.net/2012/03/08/146/-->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.2.2</version>
+          <!-- <configuration>
+        			<tagNameFormat>@{project.version}</tagNameFormat>
+    			</configuration> -->
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.7</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.maven.wagon</groupId>
+              <artifactId>wagon-scm</artifactId>
+              <version>2.2</version>
+            </dependency>
+            <dependency>
+              <groupId>org.apache.maven.scm</groupId>
+              <artifactId>maven-scm-provider-svnexe</artifactId>
+              <version>1.5</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>1.5</version>
+          <executions>
+            <execution>
+              <id>add-test-source</id>
+              <phase>process-resources</phase>
+              <goals>
+                <goal>add-test-source</goal>
+              </goals>
+              <configuration>
+                <sources>
+                  <source>${basedir}/src/test/resources</source>
+                  <!-- ?? -->
+                </sources>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <!-- sql設定のため -->
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>sql-maven-plugin</artifactId>
+          <version>1.5</version>
+          <configuration>
+            <driver>org.h2.Driver</driver>
+            <url>jdbc:h2:mem:test</url>
+            <username>sa</username>
+            <password/>
+            <srcFiles>
+              <srcFile>${basedir}/src/test/resources/schema.sql</srcFile>
+              <!-- <srcFile>/Applications/Eclipse_2019-03.app/Contents/workspace/upload_image_db2/src/test/resources/schema.sql</srcFile> -->
+            </srcFiles>
+          </configuration>
+        </plugin>
+        <!-- plugins.plugin.(groupId:artifactId)' must be unique -->
+        <!-- <plugin>
+		        <groupId>org.codehaus.mojo</groupId>
+		        <artifactId>sql-maven-plugin</artifactId>
+		        <version>1.5</version>
+		        <dependencies>
+			        <dependency>
+			            <groupId>mysql</groupId>
+			            <artifactId>mysql-connector-java</artifactId>
+			            <version>8.0.17</version>
+			        </dependency>
+		        </dependencies>
+		        <configuration>
+			        <driver>com.mysql.cj.jdbc.Driver</driver>
+			        <url>jdbc:mysql://localhost:3306/Practice_MVC</url>
+			        <username>root</username>
+			        <password>seri331</password>
+			        <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
+			        <type>javax.sql.DataSource</type>
+		          <sqlCommand>
+		          </sqlCommand>
+		        </configuration>
+       		</plugin> -->
+        <!-- JwebUnit WebDriver  どちらか一つ-->
+        <!-- <plugin>
+	       		<groupId>net.sourceforge.jwebunit</groupId>
+			    <artifactId>jwebunit-htmlunit-plugin</artifactId>
+			    <version>3.3</version>
+			    <executions>
+			    	<execution>
+			    		<goals>
+			    			<goal>test</goal>
+			    		</goals>
+			    	</execution>
+			    </executions>
+       		</plugin> -->
+        <!-- <plugin>
+	       		<groupId>net.sourceforge.jwebunit</groupId>
+			    <artifactId>jwebunit-selenium-plugin</artifactId>
+			    <version>3.0</version>
+			    <dependencies>
+		    		<dependency>
+						<groupId>org.seleniumhq.selenium</groupId>
+						<artifactId>selenium-java</artifactId>
+						<version>2.24.1</version>
+						<scope>test</scope>
+    				</dependency>
+			    </dependencies>
+			    <executions>
+			    	<execution>
+			    		<goals>
+			    			<goal>test</goal>
+			    		</goals>
+			    	</execution>
+			    </executions>
+       		</plugin> -->
+        <!-- 削除? -->
+        <!-- <plugin>
+			    <groupId>net.sourceforge.jwebunit</groupId>
+			    <artifactId>jwebunit-htmlunit-plugin</artifactId>
+			    <version>3.3</version>
+			</plugin> -->
+        <!-- <plugin>
+          <groupId>com.microsoft.azure</groupId>
+          <artifactId>azure-webapp-maven-plugin</artifactId>
+          <version>1.7.0</version>
+        </plugin> -->
+      </plugins>
+    </pluginManagement>
+    <finalName>uploadimagedb</finalName>
+    <plugins>
+      <!-- <plugin>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>azure-webapp-maven-plugin</artifactId>
+        <configuration>
+          <schemaVersion>V2</schemaVersion>
+          <resourceGroup>myResourceGroup</resourceGroup>
+          <appName>uploadimgedb</appName>
+          <pricingTier>F1</pricingTier>
+          <region>japanwest</region>
+          <runtime>
+            <os>linux</os>
+            <javaVersion>java11</javaVersion>
+            <webContainer>TOMCAT 9.0</webContainer>
+          </runtime>
+          <deployment>
+            <resources>
+              <resource>
+                <directory>${project.basedir}/target</directory>
+                <includes>
+                  <include>*.war</include>
+                </includes>
+              </resource>
+            </resources>
+          </deployment>
+        </configuration>
+      </plugin> -->
+      <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals><goal>copy</goal></goals>
+                    <configuration>
+                        <artifactItems>
+                            <artifactItem>
+                                <groupId>com.github.jsimone</groupId>
+                                <artifactId>webapp-runner</artifactId>
+                                <version>9.0.27.1</version>
+                                <destFileName>webapp-runner.jar</destFileName>
+                            </artifactItem>
+                        </artifactItems>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+  </build>
+  <!-- switch each environments -->
+  <!--   <profiles>
+  	<profile>
+  		<id>local</id>
+  		<activation>
+  			<activeByDefault>true</activeByDefault>
+  		</activation>
+  		<properties>
+  			<webxml.path>src/main/webapp/WEB-INF/web.xml</webxml.path>maven-war-pluginで<変数化>の値
+  		</properties>
+  	</profile>
+  	<profile>
+  		<id>remote</id>
+  		<properties>
+  			<webxml.path>src/remote/webapp/WEB-INF/web.xml</webxml.path>maven-war-pluginで<変数化>の値
+  		</properties>
+  	</profile>
+  </profiles> -->
+</project>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<GOOD USERID="Shima5" ID="1"/>
+	<GOOD USERID="Shima5" ID="2"/>
+	<GOOD USERID="Shima5" ID="6"/>
+	<GOOD USERID="Shima5" ID="7"/>
+	<GOOD USERID="Shima5" ID="8"/>
+	<GOOD USERID="Shima1" ID="3"/>
+	<GOOD USERID="Shima2" ID="4"/>
+	<GOOD USERID="Shima3" ID="5"/>
+	<GOOD USERID="Shima1" ID="1"/>
+	<GOOD USERID="Shima2" ID="3"/>
+	<GOOD USERID="Shima3" ID="6"/>
+</dataset>
+<!-- Logic Test でinsertされてる設定 -->
+<!--
+	<GOOD USERID="Shima1" ID="1"/>
+	<GOOD USERID="Shima1" ID="2"/>
+	<GOOD USERID="Shima1" ID="6"/>
+	<GOOD USERID="Shima1" ID="7"/>
+	<GOOD USERID="Shima2" ID="1"/>
+	<GOOD USERID="Shima2" ID="2"/>
+	<GOOD USERID="Shima2" ID="6"/>
+	<GOOD USERID="Shima2" ID="7"/>
+-->
