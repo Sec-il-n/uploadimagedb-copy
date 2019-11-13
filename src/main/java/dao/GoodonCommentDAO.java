@@ -9,8 +9,7 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 public class GoodonCommentDAO{
-	static final String URL = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_019203fe6399d5c?autoReconnect=true"
-			+ "&useUnicode=true&characterEncoding=utf8";
+	static final String URL = System.getenv("JDBC_URL");
     static final String USERNAME = "bfb3e48c4da84b";
     static final String PASSWORD = "f4cb2027";
 	private final DataSource source;

@@ -16,8 +16,7 @@ import javax.sql.DataSource;
 import model.beans.ImageBean;
 //need to return empty list even if they don't have any comments
 public class PagingDAO{
-	static final String URL = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_019203fe6399d5c?autoReconnect=true"
-			+ "&useUnicode=true&characterEncoding=utf8";
+	static final String URL = System.getenv("JDBC_URL");
 	static final String USERNAME = System.getenv("DB_USERNAME");
     static final String PASSWORD = System.getenv("DB_PASSWORD");
 	private final DataSource source;

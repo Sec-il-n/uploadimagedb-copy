@@ -19,8 +19,7 @@ import model.beans.Mutter;
 //@dao return null --> @Logic return empty Object
 //注：テストの検証で上記にそぐわない箇所(findAllByUser)あり
 public class MutterDAO{
-	static final String URL = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_019203fe6399d5c?autoReconnect=true"
-			+ "&useUnicode=true&characterEncoding=utf8";
+	static final String URL = System.getenv("JDBC_URL");
 	static final String USERNAME = System.getenv("DB_USERNAME");
     static final String PASSWORD = System.getenv("DB_PASSWORD");
 	private final DataSource source;
