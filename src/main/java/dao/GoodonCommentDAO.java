@@ -9,10 +9,11 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 public class GoodonCommentDAO{
+
 	static final String URL = System.getenv("JDBC_URL");
-    static final String USERNAME = "bfb3e48c4da84b";
-    static final String PASSWORD = "f4cb2027";
-	private final DataSource source;
+    static final String USERNAME = System.getenv("DB_USERNAME");
+    static final String PASSWORD = System.getenv("DB_PASSWORD");
+    private final DataSource source;
 
 		public GoodonCommentDAO(DataSource source){
 		this.source=source;
