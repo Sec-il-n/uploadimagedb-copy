@@ -16,6 +16,7 @@ import javax.servlet.http.Part;
 
 import model.logic.Base64Logic;
 import model.logic.CreateFileLogic;
+import model.logic.FileCompressionLogic;
 import model.logic.FileUploadCheckLogic;
 import model.logic.FileUploadLogic;
 import model.logic.GetFileNameLogic;
@@ -107,52 +108,42 @@ public class TmpFileUpload extends HttpServlet {
 				}else if(isValid && isImgMsg==null && checkText==null){
 	////****
 					CreateFileLogic clogic=new CreateFileLogic();
-//	0918			String tmpFileName =clogic.getCreatedFileName(filename);//
 					GetPathLogic gplogic=new GetPathLogic();
 					Path path=gplogic.getTmpDir();
-//
-					Path createdFile=null;
-					createdFile=clogic.createFile(path, null);
-//	0918			createdFile=gplogic.getFilePath(path,tmpFileName);//*
+					Path createdFile=clogic.createFile(path, null);
 
 					String suffix=new GetSuffixLogic().getSuffix(filename);
-//					Path createdDirectry=null;
-//					createdDirectry=clogic.createTmpDirectry(path);//1 !!pathの配下にdirが出来る！(そしてその名前は予測不能。)
-	//				createdFile=clogic.createFile(path, suffix);
-//					createdFile=clogic.createFile(createdDirectry, null);//2b!=2a
-					/**
-					 * test
-					 */
-//					List<String> test=clogic.test(path,createdDirectry,createdFile);//*
 					List<String> test=clogic.test(path,path,createdFile);//*
 
 					FileUploadLogic flogic=new FileUploadLogic ();
-//					boolean result;
 					try {
 						flogic.execute(part,createdFile);
-//						result=flogic.execute(part,createdFile);
 					}catch (IllegalArgumentException  e) {
 						e.printStackTrace();
 						throw new IllegalArgumentException ("inputstream sizeover");
-					}/*catch (NoSuchFileException e) {
+					}
+
+//added compress 1115
+					//動作確認済み
+					FileCompressionLogic fclogic=new FileCompressionLogic();
+//					try {
+//						createdFile=fclogic.compress(createdFile.toString(), suffix);
+//					} catch (IOException e) {
 //						e.printStackTrace();
-//						throw new NoSuchFileException("ファイルが存在しません2");
-//					}catch (IOException e) {
-//						e.printStackTrace();
-//						throw new IOException("ファイル書き込み入出力エラー");
-//					}*/
-//need if(!result)
-	/**
-	 * Tomcat > conf >sever.xml reloadable="true"
-	 * part->path取得に変更
-	 */
+//					}
+//add resize
+					try {
+						fclogic.getBufferedImage(createdFile, suffix);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+
 					String base64=null;
 					String s=createdFile.toString();
 					Base64Logic blogic=new Base64Logic(part, suffix);
-	//				base64=blogic.execute64();
 					base64=blogic.execute64(s);
 					part.delete();
-	//
+
 					session.setAttribute("title",title);
 					session.setAttribute("text",text);
 					to="/ShowThumbnail";

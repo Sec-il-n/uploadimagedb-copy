@@ -55,5 +55,6 @@ servlet/RewriteImage.class
 model/logic/UpdateFileDBLogic.class
 model/logic/GetPathNavLogic.class
 servlet/ToFileUploadJsp.class
+model/logic/FileCompressionLogic.class
 model/logic/RegisterLogic.class
 servlet/PageNation.class

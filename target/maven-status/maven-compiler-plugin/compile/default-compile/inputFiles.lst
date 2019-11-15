@@ -14,6 +14,7 @@
 /Applications/Eclipse_2019-03.app/Contents/workspace/uploadimagedb2/src/main/java/model/logic/FileUploadCheckLogic.java
 /Applications/Eclipse_2019-03.app/Contents/workspace/uploadimagedb2/src/main/java/model/logic/GoodCommentLogic.java
 /Applications/Eclipse_2019-03.app/Contents/workspace/uploadimagedb2/src/main/java/dao/RegisterDAO.java
+/Applications/Eclipse_2019-03.app/Contents/workspace/uploadimagedb2/src/main/java/model/logic/FileCompressionLogic.java
 /Applications/Eclipse_2019-03.app/Contents/workspace/uploadimagedb2/src/main/java/model/logic/LoginLogic.java
 /Applications/Eclipse_2019-03.app/Contents/workspace/uploadimagedb2/src/main/java/model/logic/IsValidFileLogic.java
 /Applications/Eclipse_2019-03.app/Contents/workspace/uploadimagedb2/src/main/java/dao/GoodonCommentDAO.java
