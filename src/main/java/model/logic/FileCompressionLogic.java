@@ -52,7 +52,7 @@ public class FileCompressionLogic extends HttpServlet {
 	    return createdFile;
 	}
 
-	static int IMG_WIDTH=300;
+	static int IMG_WIDTH=200;
 	static int IMG_HEIGHT=300;
 	public void getBufferedImage(Path tmpPath, String suffix) throws IOException {
 		GetPathLogic gplogic=new GetPathLogic();
