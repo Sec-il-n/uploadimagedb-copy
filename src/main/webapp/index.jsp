@@ -70,7 +70,7 @@
   <h1 class="display-4">Share your gorgeous photos!</h1>
   <p class="lead">Would you like to share your wonderful photos? You can register an account and see articles posted by everyone.</p>
   <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p>Register your account and get started. If you have already registered, please login.</p>
   <a class="btn btn-primary btn-lg" href="/LoginServlet" role="button">Log in</a>
   <a class="btn btn-outline-info btn-lg" href="/RegisterServlet" role="button">Register account</a>
 </div>

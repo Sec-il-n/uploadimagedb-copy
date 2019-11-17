@@ -69,9 +69,12 @@
   </div>
  </div>
 </nav>
-<div class="container-fluid">
-    	<div class="row">
-      		<div class="col-xl-8 mt-3">
+<div class="container pt-4 mb-4">
+
+	<div class="text-center">
+		<h5><c:if test="${not empty userId}"><c:out value="Welcome! "/><c:out value="${account.userId}"/><c:out value=" 's now loged in"/></c:if></h5><br>
+	</div>
+	<div class="jumbotron">
 
 <c:if test="${not empty msg}">
 <div class="alert alert-danger" role="alert">
@@ -81,13 +84,24 @@
 <c:out value="${errormsg}"/><br>
 <c:out value="${path}"/></div></c:if><br>
 
-<div class="text-center">
-<div>
-	<h5><c:if test="${not empty userId}"><c:out value="Welcome! "/><c:out value="${account.userId}"/><c:out value=" 's now loged in"/></c:if></h5><br>
-
-</div>
-</div></div></div></div>
-<footer class="py-5 bg-dark fixed-bottom">
+<h3 class="display-4"></h3>
+  <p class="lead">See comment button to list</p><br>
+  <a class="btn btn-outline-info ml-8" href="/ShowImages?action=show" role="button">See Comments</a>
+  <hr class="my-4">
+  <div class="row">
+	  <div class="col pr-10">
+		  <p>Let's&nbsp;&nbsp;</p>
+		  <a class="btn btn-secondary" href="/ShowImages?action=show" role="button">Post</a>
+		  <p>&nbsp;&nbsp;post your photos.</p>
+	  </div>
+	  <div class="col pl-8">
+		  <p>Click&nbsp;&nbsp;</p>
+		  <a class="btn btn-secondary" href="/ShowImages?action=edit" role="button">Edit</a>
+		  <p>If you want to edit your comments.</p>
+  	  </div>
+  </div>
+  </div></div>
+<footer class="py-5 bg-dark">
    <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
     </div>

@@ -66,16 +66,16 @@ public class LoginLogic{
 //	public String acNotNull(HttpSession session,String userId,Account ac) {//can't mock session
 	public String acNotNull() {//can't mock session
 
-		    String path="/WEB-INF/jsp/loginResult.jsp";
+		String path="/WEB-INF/jsp/loginResult.jsp";
 			return path;
 
 	}
 
-		public String acNull() {
-			String path="/WEB-INF/jsp/login.jsp";
-			return path;
+	public String acNull() {
+		String path="/WEB-INF/jsp/login.jsp";
+		return path;
 
-		}
+	}
 //	public String getPathToLoginResult(boolean result){
 //		String to = null;
 //		if(result=true){
