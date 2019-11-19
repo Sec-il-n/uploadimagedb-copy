@@ -77,10 +77,14 @@
 	<div class="jumbotron">
 
 <c:if test="${not empty msg}">
-<div class="alert alert-danger" role="alert">
-<c:out value="${msg}"/></div></c:if><br>
+	<c:if test="${msg == '書込み完了しました'}">
+	<div class="alert alert-info" role="alert" id="msg">
+	<c:out value="${msg}"/></div></c:if>
+<c:if test="${msg != '書込み完了しました'}">
+<div class="alert alert-danger" role="alert" id="msg">
+<c:out value="${msg}"/></div></c:if></c:if><br>
 <c:if test="${not empty errormsg}">
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" id="msg">
 <c:out value="${errormsg}"/><br>
 <c:out value="${path}"/></div></c:if><br>
 
@@ -91,12 +95,12 @@
   <div class="row">
 	  <div class="col pr-10">
 		  <p>Let's&nbsp;&nbsp;</p>
-		  <a class="btn btn-secondary" href="/ShowImages?action=show" role="button">Post</a>
+		  <a class="btn btn-secondary" href="/ToFileUploadJsp" id="post-button" role="button">Post</a>
 		  <p>&nbsp;&nbsp;post your photos.</p>
 	  </div>
 	  <div class="col pl-8">
 		  <p>Click&nbsp;&nbsp;</p>
-		  <a class="btn btn-secondary" href="/ShowImages?action=edit" role="button">Edit</a>
+		  <a class="btn btn-secondary" href="/ShowImages?action=edit" id="edit-button" role="button">Edit</a>
 		  <p>If you want to edit your comments.</p>
   	  </div>
   </div>

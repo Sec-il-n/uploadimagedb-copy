@@ -54,18 +54,22 @@
 <div class="container pt-4">
 <!-- alert -->
 <c:if test="${not empty msg}">
+	<c:if test="${msg == '登録完了しました。ログインして下さい。'}">
+	<div class="alert alert-info" role="alert" id="msg">
+	<c:out value="${msg}"/></div></c:if>
+<c:if test="${msg != '登録完了しました。ログインして下さい。'}">
 <div class="alert alert-danger" role="alert" id="msg">
-<c:out value="${msg}"/></div>
+<c:out value="${msg}"/></div></c:if>
 </c:if><br>
 <div class="jumbotron">
 <form action="/LoginServlet" method="post" name="loginform">
  	<div class="form-group">
 	 	<label for="userIdla">User ID</label>
-	 	<input type="text" class="form-control" name="userId" aria-describedby="userIdhelp" placeholder="Tester69">
+	 	<input type="text" class="form-control" name="userId" aria-describedby="userIdhelp" placeholder="Tester12">
 	</div>
 	<div class="form-group">
     <label for="passwordla">Password</label>
-    <input type="password" name="pass" class="form-control" placeholder="696969">
+    <input type="password" name="pass" class="form-control" placeholder="121212">
   </div>
 	 <button type="submit" class="btn btn-secondary btn-sm">login</button><br>
 </form>
