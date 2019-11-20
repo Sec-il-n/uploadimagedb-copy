@@ -1,11 +1,11 @@
 # Your Picture Blog*s
 
 
-## Overview/ツールの概要
+## Overview / ツールの概要
 
 主にJava, Servlet, Jspを用いたフォトブログのwebアプリです。
 
-## Feature/プロジェクトやツールの特徴
+## Feature / プロジェクトやツールの特徴
 - アカウント登録、編集、削除
 - ログイン、ログアウト機能
 - 記事閲覧、投稿、編集（自分の投稿した記事）
@@ -24,6 +24,8 @@
 - アプリケーションサーバ （Tomcat 9）
 - 開発環境 (openJDK 11, Eclipse 2019-03)
 
+
+
 ### Running the tests / テストの実行
 - ユニットテスト   (JUnit 4・5 , Mockito, S3Ninjya)
 - 統合テスト   (DBUnit, (H2mem), MysqlDump)
@@ -38,7 +40,8 @@ Maven 3
 ### Versioning / バージョン管理
 Git, GitHub
 
-### References / 参考文献
+
+## References / 参考文献
 
 スッキリわかるサーブレット&jsp入門  
 国本 大悟 (著)
