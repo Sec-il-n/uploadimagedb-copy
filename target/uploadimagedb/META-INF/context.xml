@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context docBase="uploadimagedb2" path="/">
-<!-- <Context path="/ROOT"> -->
-<!-- <Context antiJARLocking="true" path="/ROOT"> -->
-		<!-- docBase="upload_Image_db4"
-        path="/upload_Image_db4"
-        reloadable="true"
-        source="org.eclipse.jst.jee.server:DBconnect"> -->
-
-<Resource
+<!-- 1120 comment out (.envで代替)-->
+<!-- <Resource
 		name="jdbc/heroku_019203fe6399d5c"
         auth="Container"
         type="javax.sql.DataSource"
         maxTotal="100"
         maxIdle="30"
         maxWaitMillis="10000"
-        username="bfb3e48c4da84b"
-        password="f4cb2027"
+        username="bfb3e********"
+        password="f4*******"
         driverClassName="com.mysql.cj.jdbc.Driver"
         url="jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_019203fe6399d5c?autoReconnect=true
-        "/>
-<!--         url="jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_019203fe6399d5c?autoReconnect=true&amp;verifyServerCertificate=false&amp;useSSL=true&amp;requireSSL=true"/> -->
-        <!-- url="jdbc:mysql://localhost:3306/Practice_MVC"/> -->
+        "/> -->
 </Context>

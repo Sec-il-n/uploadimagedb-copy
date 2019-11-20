@@ -74,4 +74,26 @@ public class RegisterLogic{
 
 	}
 
+	//added 11/20
+	public String deleteMsg(boolean result) {
+		String msg;
+		if(result!=true) {
+			msg="書き換えに失敗しました。やり直して下さい。";
+		}else{
+			msg="登録を取り消しました。";
+		}
+		return msg;
+
+	}
+	public String deleteRgisterPath(boolean result) {
+		String to;
+		if(result!=true) {
+			to="/";
+		}else {
+			to="/ToLoginResult";
+		}
+		return to;
+
+	}
+
 }

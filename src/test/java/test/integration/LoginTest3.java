@@ -18,7 +18,7 @@ class LoginTest3 {
 	static DataSource source;
 	static WebDriver driver;
 	String xmlfile="src/test/resources/xml/dataset_account.xml";
-	String url="http://localhost:8080/upload_image_db4";
+	String url="http://localhost:5000/";
 	RegisterTest4 re4;
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {

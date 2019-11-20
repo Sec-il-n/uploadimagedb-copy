@@ -25,6 +25,7 @@ class LoginTest {
 //	static Wait wait;
 //	static long DEFAULT_SLEEP_TIMEOUT=30;
 	static Select selectMenu;
+	static String URL="http://localhost:5000/";
 	String title;
 	String expected;
 	String userId;
@@ -37,7 +38,7 @@ class LoginTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		driver = new ChromeDriver();
-		driver.get("http://localhost:8080/upload_image_db4");//toppage
+		driver.get(URL);//toppage
 	}
 	@BeforeEach
 	void setUpSelect() throws Exception {
@@ -66,7 +67,7 @@ class LoginTest {
 //		WebElement link=driver.findElement(By.id("login"));//-->link.sendKeys("id")
 		assertTrue(driver.findElement(By.id("register")).isDisplayed());
 		if(driver.findElement(By.className("navbar-toggler")).isSelected()) {//選択している必要がある↓click()
-			assertTrue(driver.findElement(By.linkText("簡単ログイン")).isDisplayed());
+			assertTrue(driver.findElement(By.linkText("EasyLogin")).isDisplayed());
 			assertTrue(driver.findElement(By.linkText("Register")).isDisplayed());
 //			driver.findElement(By.id("login")).click();//isSelected()-->checkbox,radio button,drop_down
 			driver.findElement(By.id("login")).click();

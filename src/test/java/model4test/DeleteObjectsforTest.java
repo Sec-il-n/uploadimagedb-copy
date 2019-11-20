@@ -69,10 +69,6 @@ public class DeleteObjectsforTest {
 	//without versions
 
 
-
-
-
-
 //	public static String[] objectsWithoutVersions(Map<String,String> toDelete) {
 //		List<String> keysList=new ArrayList<>(toDelete.keySet());
 //		String[] keys= keysList.toArray(new String[keysList.size()]);

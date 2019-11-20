@@ -75,11 +75,14 @@
 		<h5><c:if test="${not empty userId}"><c:out value="Welcome! "/><c:out value="${account.userId}"/><c:out value=" 's now loged in"/></c:if></h5><br>
 	</div>
 	<div class="jumbotron">
-
+<c:if test="${not empty deletemsg}">
+<div class="alert alert-info" role="alert" id="msg">
+<c:out value="${deletemsg}"/></div></c:if>
 <c:if test="${not empty msg}">
 	<c:if test="${msg == '書込み完了しました'}">
 	<div class="alert alert-info" role="alert" id="msg">
 	<c:out value="${msg}"/></div></c:if>
+
 <c:if test="${msg != '書込み完了しました'}">
 <div class="alert alert-danger" role="alert" id="msg">
 <c:out value="${msg}"/></div></c:if></c:if><br>

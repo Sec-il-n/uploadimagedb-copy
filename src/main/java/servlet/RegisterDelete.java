@@ -56,31 +56,34 @@ public class RegisterDelete extends HttpServlet {
 			}
 
 			boolean resultDelete = false;
+			RegisterLogic logic=new RegisterLogic(dataSource);
 			try {
 //				resultDelete = logic.delete(account,dataSource);
-				RegisterLogic logic=new RegisterLogic(dataSource);
+
 				resultDelete = logic.delete(account);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-			if(resultDelete) {
-//				session.invalidate();
-				session.removeAttribute("userId");
-				session.removeAttribute("account");
-				msg="登録を取り消しました。";
-			    to="/upload_image_db4";
-
-			}else {
-				msg="書き換えに失敗しました。やり直して下さい。";//'d set primary @db
-		    	to="/upload_image_db4/ToLoginResult";
-			}
+			msg=logic.deleteMsg(resultDelete);
+			to=logic.deleteRgisterPath(resultDelete);
+//			if(resultDelete) {
+////				session.invalidate();
+//				session.removeAttribute("userId");
+//				session.removeAttribute("account");
+//				msg="登録を取り消しました。";
+//			    to="/";
+//
+//			}else {
+//				msg="書き換えに失敗しました。やり直して下さい。";//'d set primary @db
+//		    	to="/ToLoginResult";
+//			}
 
 		}else {
 			RequestDispatcher dsp=request.getRequestDispatcher(to);
 		    dsp.forward(request, response);
 		}
-		session.setAttribute("msg", msg);
+		session.setAttribute("deletemsg", msg);
 		response.setHeader("Cache-Control", "no-cache");
 		response.sendRedirect(to);
 		response.getWriter().append("Served at: ").append(request.getContextPath());

@@ -63,9 +63,9 @@
 <div class="jumbotron">
 	<!-- alert -->
 <c:if test="${not empty msg}" >
-	<div class="alert alert-danger" role="alert" id="msg">
-	<c:out value="${msg}"/>
-	</div>
+<div class="alert alert-danger" role="alert" id="msg">
+<c:out value="${msg}"/>
+</div>
 </c:if><br>
   <h1 class="display-4">Share your gorgeous photos!</h1>
   <p class="lead">Would you like to share your wonderful photos? You can register an account and see articles posted by everyone.</p>

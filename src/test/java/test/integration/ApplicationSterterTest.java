@@ -9,17 +9,18 @@ import org.junit.jupiter.api.Test;
 
 import net.sourceforge.jwebunit.util.TestingEngineRegistry;
 
+//using JWebUnit（成果物外す）
 class ApplicationSterterTest {
 
 	static String TESTING_ENGINE_HTMLUNIT="TestingEngineHtmlUnit";//<-key
 //	static String TESTING_ENGINE_WEBDRIVER = "TestingEngineWebdriver";
+	static String URL="http://localhost:5000/";
 
 	@BeforeEach
 	void setUp() throws Exception {
-		setBaseUrl("http://localhost:8080/upload_image_db4");
+		setBaseUrl(URL);
 
 	}
-
 
 	@BeforeEach
 	void setUpTectingEngine() throws Exception {
@@ -34,7 +35,6 @@ class ApplicationSterterTest {
 		closeBrowser();
 	}
 
-
 	@Test
 	void testEntranceLogin() {
 		beginAt("http://google.fr");
@@ -44,8 +44,8 @@ class ApplicationSterterTest {
 		assertLinkPresent("login");//have to be id
 		clickLink("login");//id属性
 		assertTitleEquals("Login Form");
-		setTextField("userId","Shima5");
-        setTextField("pass","135790");//
+		setTextField("userId","Tester12");
+        setTextField("pass","121212");//
         submit("submit","Login");//
 	}
 

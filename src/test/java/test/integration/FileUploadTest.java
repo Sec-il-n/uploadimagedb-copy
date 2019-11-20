@@ -100,7 +100,7 @@ class FileUploadTest extends PrepForTest4{
 			driver.navigate().forward();
 //	△		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);//doesn't wait
 //	x		assertEquals("/upload_image_db4/ShowThumbnail",driver.getCurrentUrl());
-			url="http://localhost:8080/upload_image_db4/ShowThumbnail";
+			url="http://localhost:5000/ShowThumbnail";
 			assertEquals(url,driver.getCurrentUrl());
 			assertEquals("thumbnail",driver.getTitle());
 			driver.findElement(By.id("post")).isSelected();
@@ -108,7 +108,7 @@ class FileUploadTest extends PrepForTest4{
 
 			driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 			driver.navigate().forward();
-			url="http://localhost:8080/upload_image_db4/ToLoginResult";
+			url="http://localhost:5000/ToLoginResult";
 			assertEquals(url,driver.getCurrentUrl());
 			driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 	}

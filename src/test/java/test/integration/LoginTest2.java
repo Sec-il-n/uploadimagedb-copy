@@ -30,6 +30,7 @@ class LoginTest2 {
     private static final String JDBC_URL = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE";
     private static final String USER = "user";
     private static final String PASSWORD = "pass";
+    private static String URL="http://localhost:5000/";
     private static IDatabaseTester dbTester;
     private static DataSource dataSource;
     LoginDAO dao;
@@ -48,7 +49,7 @@ class LoginTest2 {
     @BeforeEach
 	void setUpDriver() throws Exception {
 		driver = new ChromeDriver();
-		driver.get("http://localhost:8080/upload_image_db4");//toppage
+		driver.get(URL);//toppage
 	}
     @BeforeEach
 	void setUpDB() throws Exception {

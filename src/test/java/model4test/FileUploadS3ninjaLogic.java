@@ -28,6 +28,7 @@ public class FileUploadS3ninjaLogic {
 	String testSource = "src/test/resources/1563062226948_test.jpg";
 	static {
 		try {
+//			Files.createDirectories(Paths.get("/tmp/s3"));//change /tmp/s3 or something
 			Files.createDirectories(Paths.get("data/s3"));//change /tmp/s3 or something
 		} catch (IOException e) {
 			e.printStackTrace();

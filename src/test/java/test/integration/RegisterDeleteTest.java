@@ -14,8 +14,8 @@ import model4test.LoginAutomatied;
 
 class RegisterDeleteTest extends PrepForTest4{
 	static WebDriver driver;
+	private static String URL="http://localhost:5000/";
 	RegisterDeleteTest rdt;
-	String url="http://localhost:8080/upload_image_db4";
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		PrepForTest4.setUpBeforeClassDriver();
@@ -24,7 +24,7 @@ class RegisterDeleteTest extends PrepForTest4{
 	@BeforeEach
 	void setUp() throws Exception {
 		rdt=new RegisterDeleteTest();
-		driver=rdt.setUpDriver(url);
+		driver=rdt.setUpDriver(URL);
 	}
 
 	@AfterEach
@@ -51,7 +51,7 @@ class RegisterDeleteTest extends PrepForTest4{
 //		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 		threadSleep();
 		driver.navigate().forward();
-		assertEquals("http://localhost:8080/upload_image_db4/",driver.getCurrentUrl());
+		assertEquals("http://localhost:5000",driver.getCurrentUrl());
 		assertEquals("登録を取り消しました。",driver.findElement(By.id("msg")).getText());
 	}
 	public static void threadSleep() {
