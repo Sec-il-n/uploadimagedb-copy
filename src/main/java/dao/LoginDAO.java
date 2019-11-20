@@ -15,7 +15,7 @@ public class LoginDAO{
     static final String USERNAME = System.getenv("DB_USERNAME");
     static final String PASSWORD = System.getenv("DB_PASSWORD");
 
-	private final DataSource source;//:h2<=>dbunit:DataSourceBasedDBTestCase.getDataSource()
+	private final DataSource source;
 
 	public LoginDAO(DataSource source){
 		this.source=source;
@@ -29,7 +29,7 @@ public class LoginDAO{
 	    Account account=null;
 
 	    try {
-//			conn=source.getConnection();//h2
+
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			String sql="SELECT * FROM ACCOUNT WHERE USERID=? AND PASS=?";
 			PreparedStatement st=conn.prepareStatement(sql);
