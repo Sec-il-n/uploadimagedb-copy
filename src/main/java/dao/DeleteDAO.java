@@ -11,8 +11,7 @@ import model.beans.ImageBean;
 import model.beans.Mutter;
 
 public class DeleteDAO  {
-//	static final String URL = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_019203fe6399d5c?autoReconnect=true"
-//			+ "&useUnicode=true&characterEncoding=utf8";
+
 	static final String URL = System.getenv("JDBC_URL");
 	static final String USERNAME = System.getenv("DB_USERNAME");
     static final String PASSWORD = System.getenv("DB_PASSWORD");
@@ -27,7 +26,7 @@ public class DeleteDAO  {
 
 		try {
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-//			conn=source.getConnection();
+
 			String sql="DELETE FROM mutter_image WHERE title=? AND filename=?";//where filename=? でも良い
 
 			PreparedStatement rs=conn.prepareStatement(sql);
