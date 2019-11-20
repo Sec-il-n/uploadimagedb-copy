@@ -399,14 +399,10 @@
             </execution>
           </executions>
         </plugin>
-        <!--以下２つ  http://www.nagaseyasuhito.net/2012/03/08/146/-->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
           <version>2.2.2</version>
-          <!-- <configuration>
-        			<tagNameFormat>@{project.version}</tagNameFormat>
-    			</configuration> -->
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -439,7 +435,6 @@
               <configuration>
                 <sources>
                   <source>${basedir}/src/test/resources</source>
-                  <!-- ?? -->
                 </sources>
               </configuration>
             </execution>
@@ -456,108 +451,14 @@
             <username>sa</username>
             <password/>
             <srcFiles>
-              <srcFile>${basedir}/src/test/resources/schema.sql</srcFile>
-              <!-- <srcFile>/Applications/Eclipse_2019-03.app/Contents/workspace/upload_image_db2/src/test/resources/schema.sql</srcFile> -->
+              <srcFile>${basedir}/src/test/resources/schema.sql</srcFile>             
             </srcFiles>
           </configuration>
         </plugin>
-        <!-- plugins.plugin.(groupId:artifactId)' must be unique -->
-        <!-- <plugin>
-		        <groupId>org.codehaus.mojo</groupId>
-		        <artifactId>sql-maven-plugin</artifactId>
-		        <version>1.5</version>
-		        <dependencies>
-			        <dependency>
-			            <groupId>mysql</groupId>
-			            <artifactId>mysql-connector-java</artifactId>
-			            <version>8.0.17</version>
-			        </dependency>
-		        </dependencies>
-		        <configuration>
-			        <driver>com.mysql.cj.jdbc.Driver</driver>
-			        <url>jdbc:mysql://localhost:3306/Practice_MVC</url>
-			        <username>root</username>
-			        <password>seri331</password>
-			        <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
-			        <type>javax.sql.DataSource</type>
-		          <sqlCommand>
-		          </sqlCommand>
-		        </configuration>
-       		</plugin> -->
-        <!-- JwebUnit WebDriver  どちらか一つ-->
-        <!-- <plugin>
-	       		<groupId>net.sourceforge.jwebunit</groupId>
-			    <artifactId>jwebunit-htmlunit-plugin</artifactId>
-			    <version>3.3</version>
-			    <executions>
-			    	<execution>
-			    		<goals>
-			    			<goal>test</goal>
-			    		</goals>
-			    	</execution>
-			    </executions>
-       		</plugin> -->
-        <!-- <plugin>
-	       		<groupId>net.sourceforge.jwebunit</groupId>
-			    <artifactId>jwebunit-selenium-plugin</artifactId>
-			    <version>3.0</version>
-			    <dependencies>
-		    		<dependency>
-						<groupId>org.seleniumhq.selenium</groupId>
-						<artifactId>selenium-java</artifactId>
-						<version>2.24.1</version>
-						<scope>test</scope>
-    				</dependency>
-			    </dependencies>
-			    <executions>
-			    	<execution>
-			    		<goals>
-			    			<goal>test</goal>
-			    		</goals>
-			    	</execution>
-			    </executions>
-       		</plugin> -->
-        <!-- 削除? -->
-        <!-- <plugin>
-			    <groupId>net.sourceforge.jwebunit</groupId>
-			    <artifactId>jwebunit-htmlunit-plugin</artifactId>
-			    <version>3.3</version>
-			</plugin> -->
-        <!-- <plugin>
-          <groupId>com.microsoft.azure</groupId>
-          <artifactId>azure-webapp-maven-plugin</artifactId>
-          <version>1.7.0</version>
-        </plugin> -->
       </plugins>
     </pluginManagement>
     <finalName>uploadimagedb</finalName>
     <plugins>
-      <!-- <plugin>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-webapp-maven-plugin</artifactId>
-        <configuration>
-          <schemaVersion>V2</schemaVersion>
-          <resourceGroup>myResourceGroup</resourceGroup>
-          <appName>uploadimgedb</appName>
-          <pricingTier>F1</pricingTier>
-          <region>japanwest</region>
-          <runtime>
-            <os>linux</os>
-            <javaVersion>java11</javaVersion>
-            <webContainer>TOMCAT 9.0</webContainer>
-          </runtime>
-          <deployment>
-            <resources>
-              <resource>
-                <directory>${project.basedir}/target</directory>
-                <includes>
-                  <include>*.war</include>
-                </includes>
-              </resource>
-            </resources>
-          </deployment>
-        </configuration>
-      </plugin> -->
       <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
@@ -580,22 +481,5 @@
         </plugin>
     </plugins>
   </build>
-  <!-- switch each environments -->
-  <!--   <profiles>
-  	<profile>
-  		<id>local</id>
-  		<activation>
-  			<activeByDefault>true</activeByDefault>
-  		</activation>
-  		<properties>
-  			<webxml.path>src/main/webapp/WEB-INF/web.xml</webxml.path>maven-war-pluginで<変数化>の値
-  		</properties>
-  	</profile>
-  	<profile>
-  		<id>remote</id>
-  		<properties>
-  			<webxml.path>src/remote/webapp/WEB-INF/web.xml</webxml.path>maven-war-pluginで<変数化>の値
-  		</properties>
-  	</profile>
-  </profiles> -->
+  
 </project>
