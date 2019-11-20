@@ -30,7 +30,7 @@ public class GoodonCommentDAO{
 		}
 		try {
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-//			conn=source.getConnection();
+
 
 			String sql="select exists(select*from good where userId=? and id=?)";
 
@@ -73,7 +73,7 @@ public class GoodonCommentDAO{
 		}
 	    try {
 	    	conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-//	    	conn=source.getConnection();
+
 
 	    	String sql1="INSERT INTO Good (userId,id) VALUES(?,?);";
 
@@ -110,7 +110,7 @@ public class GoodonCommentDAO{
 		}
 		try {
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-//			conn=source.getConnection();
+
 
 			String sql2="DELETE FROM Good WHERE userId=? AND id=?;";
 			PreparedStatement st=conn.prepareStatement(sql2);
@@ -146,7 +146,7 @@ public class GoodonCommentDAO{
 		int count = 0;
 		try {
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-//			conn=source.getConnection();
+
 			String sql1="SELECT COUNT(*) FROM Good WHERE id=?;";
 			PreparedStatement st=conn.prepareStatement(sql1);
 			st.setInt(1,i);
