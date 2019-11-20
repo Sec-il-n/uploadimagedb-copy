@@ -1,5 +1,4 @@
-# Your Picture Blog*s
-
+# Your Picture Blog*s 
 
 ## Overview / ツールの概要
 
@@ -23,8 +22,6 @@
 - 画像アップロード （AWS S3）
 - アプリケーションサーバ （Tomcat 9）
 - 開発環境 (openJDK 11, Eclipse 2019-03)
-
-
 
 ### Running the tests / テストの実行
 - ユニットテスト   (JUnit 4・5 , Mockito, S3Ninjya)
