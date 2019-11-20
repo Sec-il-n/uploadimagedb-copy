@@ -31,7 +31,7 @@
 ### Deployment / デプロイ
 Heroku
 
-### Built With / 協働するシステムのリスト
+### Built / ビルドツール
 Maven 3
 
 ### Versioning / バージョン管理
