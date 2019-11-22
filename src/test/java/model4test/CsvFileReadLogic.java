@@ -30,35 +30,3 @@ public class CsvFileReadLogic {
 
 
 
-//xx Stringのみ?  1行目飛ばし?
-//	public List<String> readCsvFile(String filepath) throws Exception {
-//		try(FileReader fr=new FileReader(filepath);
-//			BufferedReader br=new BufferedReader(fr);){
-//
-//			String line = null;
-//			while((line=br.readLine())!= null) {
-//				StringTokenizer tokenizer=new StringTokenizer(line, ",");
-//				while(tokenizer.hasMoreTokens()) {
-//					tokenizer.nextToken().toString();
-//	........
-//				}
-//			}
-//		}
-//		return null;
-//	}
-//	public String[] readCsvFile(String filepath) throws Exception {
-//		try(FileReader fr=new FileReader(filepath);
-//				BufferedReader br=new BufferedReader(fr);){
-//
-//			String line;
-//			String [] words = null;
-//			//		StringTokenizer token;
-//			while((line=br.readLine()) != null) {
-//				byte[] b=line.getBytes();
-//				line=new String(b);
-//				words=line.split(",", -1);
-//			}
-//			return words;
-//		}
-//	}
-}
