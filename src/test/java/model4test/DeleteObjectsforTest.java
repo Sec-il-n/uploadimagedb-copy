@@ -67,6 +67,7 @@ public class DeleteObjectsforTest {
 	 		JOptionPane.showMessageDialog(new JDialog(), "faild!!");
 	     	}
 	}
+
 	
 	/**
 	 * delete
