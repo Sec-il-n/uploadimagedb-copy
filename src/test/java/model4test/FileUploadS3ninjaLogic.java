@@ -23,6 +23,7 @@ import com.amazonaws.services.s3.model.PutObjectResult;
 public class FileUploadS3ninjaLogic {
 	private static String bucketName="bucket";
 	private static String fileObjKeyName="s3test.jpg";
+	//テスト用(s3ninjya)のKEY
 	String ACCESS_KEY = "AKIAJBWG4SMUOOSHBMZQ";
 	String CECRET_KEY = "sbbH856KXsSuo82aJfEpN1ReN6jwdarBeZH077AC";
 	String testSource = "src/test/resources/1563062226948_test.jpg";
