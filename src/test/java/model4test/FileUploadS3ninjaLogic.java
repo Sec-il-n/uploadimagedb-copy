@@ -28,8 +28,7 @@ public class FileUploadS3ninjaLogic {
 	String testSource = "src/test/resources/1563062226948_test.jpg";
 	static {
 		try {
-//			Files.createDirectories(Paths.get("/tmp/s3"));//change /tmp/s3 or something
-			Files.createDirectories(Paths.get("data/s3"));//change /tmp/s3 or something
+			Files.createDirectories(Paths.get("data/s3"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -37,7 +36,7 @@ public class FileUploadS3ninjaLogic {
 			//Method :java.lang.refrect
 			try {
 				Method main = Class.forName("IPL").getMethod("main", new Class[] {String[].class}/* parameterTypes*/);
-				main.invoke(null, (Object) new String[0]);//invoke:基本メソッドを、指定したパラメタで呼び出す
+				main.invoke(null, (Object) new String[0]);
 
 			} catch (NoSuchMethodException | SecurityException | ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 				e.printStackTrace();
@@ -54,7 +53,7 @@ public class FileUploadS3ninjaLogic {
 
 	}
 
-	public boolean upload(String newFileName,String tmpPath) {//newFileName=be primary,tmpPath=testSource
+	public boolean upload(String newFileName,String tmpPath) {
 		fileObjKeyName=newFileName;
 		AmazonS3 s3 =AmazonS3Client.builder()
 				.withEndpointConfiguration(new EndpointConfiguration("http://localhost:9444/s3", null))
@@ -64,7 +63,6 @@ public class FileUploadS3ninjaLogic {
 				.build();
 
 		PutObjectResult putObjectResult=s3.putObject(new PutObjectRequest(bucketName,fileObjKeyName,new File(testSource)));
-//		s3.putObject(new PutObjectRequest("bucket","s3test.jpg",new File("src/test/resources/1563062226948_test.jpg")));
 		if(putObjectResult!=null){
 		 	return true;
 		 }
