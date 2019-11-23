@@ -14,18 +14,17 @@
 
 ## Language, environment / 言語、環境
 - java （11）
-- javaEE8（servlet 4.0 、jsp 、jstl 、EL式）
-- フロントエンド（BootStrap 4）
-- 外部ライブラリ  （Apache Commons.lang）
-- プラットフォーム  (heroku)
-- データベース     （Mysql, heroku clearDB（Mysql, H2mem）
-- 画像アップロード （AWS S3）
+- javaEE8 （Servlet 4.0 、JSP 、JSTL 、EL式）
+- データベース （MySQL, Heroku ClearDB MySQL, H2mem)
 - アプリケーションサーバ （Tomcat 9）
+- 画像アップロード （AWS S3）
 - 開発環境 (openJDK 11, Eclipse 2019-03)
+- フロントエンド （BootStrap 4）
+- 外部ライブラリ  （Apache Commons.lang）
 
 ### Running the tests / テストの実行
 - ユニットテスト   (JUnit 4・5 , Mockito, S3Ninjya)
-- 統合テスト   (DBUnit, (H2mem), MysqlDump)
+- 統合テスト     (DBUnit, (H2mem), MysqlDump)
 - UI テストツール （Selenium）
 
 ### Deployment / デプロイ
