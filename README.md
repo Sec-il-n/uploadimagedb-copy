@@ -24,7 +24,7 @@
 
 ### Running the tests / テストの実行
 - ユニットテスト   (JUnit 4・5 , Mockito, S3Ninjya)
-- 統合テスト     (DBUnit, (H2mem), MysqlDump)
+- 統合テスト     (DBUnit, MysqlDump)
 - UI テストツール （Selenium）
 
 ### Deployment / デプロイ
