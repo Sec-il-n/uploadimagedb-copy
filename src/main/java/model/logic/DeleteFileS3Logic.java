@@ -14,15 +14,16 @@ import com.amazonaws.services.s3.model.DeleteObjectRequest;
  * Servlet implementation class FileDeleteS3Logic
  */
 public class DeleteFileS3Logic {
+	
 	private static final String bucketName=System.getenv("AWS_S3_BUCKETNAME");
 	private static final String accessKey =System.getenv("AWS_S3_UPLOAD_ACCESSKEY");
 	private static final String secretKey =System.getenv("AWS_S3_UPLOAD_SECRETKEY");
 	private static final Regions clientRegion = Regions.AP_NORTHEAST_1;
 	String fileObjKeyName;
-
 	AmazonS3 s3Client;
-	//<=>putObject(return PutObjectResult)
+
 	public void s3Delete(String newFileName){
+		
 		AWSCredentials credentials=new BasicAWSCredentials(accessKey,secretKey);
 		fileObjKeyName="upload/"+ newFileName;
 
@@ -36,10 +37,8 @@ public class DeleteFileS3Logic {
 			s3Client.deleteObject(deleteObjectRequest);
 
 		} catch (AmazonServiceException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		} catch (SdkClientException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 
