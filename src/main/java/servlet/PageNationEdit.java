@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
-
 import model.beans.ImageBean;
 import model.logic.GetDataSourceLogic;
 import model.logic.GetPageLogic;
@@ -23,9 +21,9 @@ import model.logic.PageNationLogic;
 public class PageNationEdit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public PageNationEdit() {
-        super();
-    }
+	public PageNationEdit() {
+		super();
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -39,7 +37,7 @@ public class PageNationEdit extends HttpServlet {
 		String msg = logic.getMsg(to);
 		if(to!=null && msg!=null){
 			request.setAttribute("msg", msg);
-		}else {//forward前まで
+		} else {
 
 			String p = request.getParameter("page");
 			String n = request.getParameter("now");
@@ -47,9 +45,8 @@ public class PageNationEdit extends HttpServlet {
 			int total=(int) session.getAttribute("total");
 			int totalPage=(int) session.getAttribute("totalPage");
 
-	//		if(userId!=null && (p!=null || n!=null)){
 			if(p!=null || n!=null){
-				int page = 1;//
+				int page = 1;
 
 				PageNationLogic plogic=new PageNationLogic();
 				page=plogic.getPageTry(p, n, action, totalPage);
@@ -65,8 +62,7 @@ public class PageNationEdit extends HttpServlet {
 
 				GetPageLogic gplogic = new GetPageLogic(source);
 				List<ImageBean> pagedPostedList=gplogic.findPageByUser(userId, page);
-//				List<ImageBean> pagedPostedList=gplogic.findPageByUser(userId, page, source);
-				int in = plogic.getEditPageShowing(page, total, totalPage);//
+				int in = plogic.getEditPageShowing(page, total, totalPage);
 
 				request.setAttribute("pagedPostedList", pagedPostedList);
 				request.setAttribute("page", page);
