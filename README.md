@@ -15,16 +15,16 @@
 ## Language, environment / 言語、環境
 - java （11）
 - javaEE8 （Servlet 4.0 、JSP 、JSTL 、EL式）
-- データベース （MySQL, Heroku ClearDB MySQL, H2mem)
+- データベース （MySQL、 Heroku ClearDB MySQL、H2 mem)
 - アプリケーションサーバ （Tomcat 9）
 - 画像アップロード （AWS S3）
-- 開発環境 (openJDK 11, Eclipse 2019-03)
+- 開発環境（openJDK 11、 Eclipse 2019-03）
 - フロントエンド （BootStrap 4）
-- 外部ライブラリ  （Apache Commons.lang）
+- 外部ライブラリ  （Apache Commons lang）
 
 ### Running the tests / テストの実行
-- ユニットテスト   (JUnit 4・5 , Mockito, S3Ninjya)
-- 統合テスト     (DBUnit, MysqlDump)
+- ユニットテスト   (JUnit 4・5、 Mockito、 S3Ninjya)
+- 統合テスト     (DBUnit、 MysqlDump)
 - UI テストツール （Selenium）
 
 ### Deployment / デプロイ
@@ -34,7 +34,7 @@ Heroku
 Maven 3
 
 ### Versioning / バージョン管理
-Git, GitHub
+Git、 GitHub
 
 
 ## References / 参考文献
@@ -49,7 +49,7 @@ JUnit実践入門
 Will Iverson (著)、酒井 皇治 (監訳)、日向 あおい (訳)
 
 Javaサーブレットプログラミング  
-Jason Hunter, William Crawford (著)、中田 秀基 (訳)
+Jason Hunter、 William Crawford (著)、中田 秀基 (訳)
 
 
 
