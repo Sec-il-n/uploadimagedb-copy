@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context docBase="uploadimagedb2" path="/">
-<!-- 1120 comment out (.envで代替)-->
 <!-- <Resource
 		name="jdbc/heroku_019203fe6399d5c"
         auth="Container"
