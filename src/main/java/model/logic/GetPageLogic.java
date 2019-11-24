@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 import dao.PagingDAO;
 import model.beans.ImageBean;
 
-public class GetPageLogic {//
+public class GetPageLogic {
 
 	DataSource source;
 
