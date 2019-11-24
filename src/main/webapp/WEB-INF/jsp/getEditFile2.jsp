@@ -40,8 +40,6 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/Navigate?action=start">How to Start</a>
           <a class="dropdown-item" href="/Navigate?action=comment">How to Coments</a>
-          <!-- <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a> -->
         </div>
         </li>
 	    <li class="nav-item">
@@ -55,7 +53,6 @@
 </nav>
 <c:out value="click title which you whant to edit."></c:out><br>
 
-<%-- <c:forEach var="y" items="${yourPostedList}"> --%>
 <c:forEach var="y" items="${pagedPostedList}">
 <c:out value="${y.date_time}"/><br>
 <a href="
