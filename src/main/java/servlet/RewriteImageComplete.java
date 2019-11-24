@@ -41,7 +41,7 @@ public class RewriteImageComplete extends HttpServlet {
 		String filename=(String) session.getAttribute("filename");
 		String deleteFileName=(String) session.getAttribute("deleteFileName");
 		String postedtime=(String) session.getAttribute("time");
-		String base64=(String) session.getAttribute("base64");//new
+		String base64=(String) session.getAttribute("base64");
 		String userId = (String) session.getAttribute("userId");
 
 		LoginLogic logic=new LoginLogic();
