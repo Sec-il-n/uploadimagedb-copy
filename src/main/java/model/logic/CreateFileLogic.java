@@ -20,11 +20,9 @@ public class CreateFileLogic {
 		} catch (UnsupportedOperationException e1) {
 			e1.printStackTrace();
 			throw new UnsupportedOperationException("ディレクトリの作成時に原子的に設定できない属性が配列に含まれる");
-		
 		} catch (FileAlreadyExistsException  e1) {
 			e1.printStackTrace();
 			throw new FileAlreadyExistsException ("dirが存在するが、ディレクトリではない(オプションの固有例外)");
-		
 		} catch (IOException  e1) {
 			e1.printStackTrace();
 			throw new IOException ("入出力エラー");
@@ -46,11 +44,9 @@ public class CreateFileLogic {
 		} catch (IllegalArgumentException  e) {
 			e.printStackTrace();
 			throw new IllegalArgumentException   ("新しいファイル名にsuffixを使用できません");
-
 		} catch (UnsupportedOperationException  e) {
 			e.printStackTrace();
 			throw new UnsupportedOperationException  ("原子的に設定できない属性が配列に含まれます");
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -75,11 +71,9 @@ public class CreateFileLogic {
 		} catch (UnsupportedOperationException  e) {
 			e.printStackTrace();
 			throw new UnsupportedOperationException  ("原子的に設定できない属性が配列に含まれます");
-		
 		} catch (FileAlreadyExistsException e) {
 			e.printStackTrace();
 			throw new FileAlreadyExistsException ("同名ファイルがすでに存在します");
-		
 		} catch (NoSuchFileException e) {
 			e.printStackTrace();
 			throw new NoSuchFileException("ファイルが作成できませんでした");
