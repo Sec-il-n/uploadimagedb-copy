@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
-
 import model.beans.ImageBean;
 import model.logic.GetDataSourceLogic;
 import model.logic.GetPageLogic;
@@ -23,10 +21,9 @@ import model.logic.PageNationLogic;
 public class PageNation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public PageNation() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	public PageNation() {
+		super();
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -41,12 +38,13 @@ public class PageNation extends HttpServlet {
 
 		if(to!=null && msg!=null){
 			request.setAttribute("msg", msg);
-		}else {
+		} else {
 			String p = request.getParameter("page");
 			String n = request.getParameter("now");
 			String action = request.getParameter("action");
 			int total=(int) session.getAttribute("total");
 			int totalPage=(int) session.getAttribute("totalPage");
+			
 			if(p!=null || n!=null){
 				int page = 0;
 
@@ -56,6 +54,7 @@ public class PageNation extends HttpServlet {
 
 				GetDataSourceLogic gdlogic=new GetDataSourceLogic();
 				DataSource source = null;
+				
 				try {
 					source = gdlogic.getDataSource();
 				} catch (NamingException e) {
@@ -63,14 +62,16 @@ public class PageNation extends HttpServlet {
 				}
 
 				GetPageLogic gplogic = new GetPageLogic(source);
-				List<ImageBean> pagedList=gplogic.findPage(page);//DataSource
+				List<ImageBean> pagedList=gplogic.findPage(page);
 				int in =plogic.getPageShowing(page, total, totalPage);
 
 				request.setAttribute("pagedList", pagedList);
 				request.setAttribute("page", page);
 				request.setAttribute("in", in);
+			
 			}
 		}
+		
 		RequestDispatcher dsp=request.getRequestDispatcher(to);
 		dsp.forward(request, response);
 
