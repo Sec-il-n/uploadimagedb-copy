@@ -29,7 +29,7 @@ public class CheckDirectoryContentsLogic {
 		return sortedFileName;
 	}
 	
-	public boolean checkDirectry(Path path) {//ファイルまでのパス
+	public boolean checkDirectry(Path path) {
 	
 		boolean exists = false;
 		
@@ -64,6 +64,7 @@ public class CheckDirectoryContentsLogic {
 
 
 	public File[] filespath(String path) throws IOException{
+		
 		File[] files=new File(path).listFiles();
 		return files;
     }
