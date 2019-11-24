@@ -59,8 +59,6 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/Navigate?action=start">How to Start</a>
           <a class="dropdown-item" href="/Navigate?action=comment">How to Coments</a>
-          <!-- <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a> -->
         </div>
         </li>
 	    <li class="nav-item">
@@ -85,7 +83,6 @@
 <div class="form-group">
     <label for="Inputtitle">Title:</label>
     <input type="text" name="title" class="form-control" id="Inputtitle" placeholder="title">
-	<!-- <textarea name="title" rows="2" cols="35"></textarea><br> -->
 </div>
 <div class="form-group">
     <label for="FormControlTextarea1">Comment:</label>
