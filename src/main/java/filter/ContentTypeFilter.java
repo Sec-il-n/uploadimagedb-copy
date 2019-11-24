@@ -1,7 +1,6 @@
 package filter;
 
 import java.io.IOException;
-
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
@@ -13,10 +12,8 @@ import javax.servlet.annotation.WebFilter;
 @WebFilter("/*")
 public class ContentTypeFilter implements javax.servlet.Filter {
 
-    public ContentTypeFilter() {
-    }
-    public void init(FilterConfig fConfig) throws ServletException {
-	}
+	public ContentTypeFilter() {}
+	public void init(FilterConfig fConfig) throws ServletException {}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
@@ -24,7 +21,6 @@ public class ContentTypeFilter implements javax.servlet.Filter {
 		chain.doFilter(request, response);
 	}
 
-	public void destroy() {
-	}
+	public void destroy() {}
 
 }
