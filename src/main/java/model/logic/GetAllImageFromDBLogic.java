@@ -1,9 +1,7 @@
 package model.logic;
 
 import java.util.List;
-
 import javax.sql.DataSource;
-
 import dao.MutterDAO;
 import model.beans.ImageBean;;
 
