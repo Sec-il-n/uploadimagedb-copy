@@ -35,7 +35,7 @@ public class ShowThumbnail extends HttpServlet {
 			
 			if(!exist){
 				to="/WEB-INF/jsp/fileUpload.jsp";
-				msg="入力し直して下さい。";//
+				msg="入力し直して下さい。";
 				request.setAttribute("msg", msg);
 			}else{
 				to="/WEB-INF/jsp/thumbnail.jsp";
