@@ -54,13 +54,20 @@ public class RewriteImageComplete extends HttpServlet {
 		}
 
 		if(userId!=null){
-			if(deleteFilePath==null|| title==null||text==null||deleteFileName==null||postedtime==null ||base64==null) {
+			
+			if(deleteFilePath==null || title==null || text==null 
+			   || deleteFileName==null || postedtime==null || base64==null) {
+			
 				session.setAttribute("errormsg", "不正な画面移管が有りました。(更新が完了しているか、内容が取得できていない可能性があります。)");
 				response.setHeader("Cache-Control", "no-cache");
 				response.sendRedirect("/ToLoginResult");
-			} else if(deleteFilePath!=null && title!=null && text!=null && filename!=null && deleteFileName!=null && postedtime!=null) {
+			
+			} else if(deleteFilePath!=null && title!=null && text!=null 
+				  && filename!=null && deleteFileName!=null && postedtime!=null) {
+				
 				CreateFileLogic clogic=new CreateFileLogic();
-				String newFileName = clogic.getRewritedFileName(postedtime, filename);//
+				String newFileName = clogic.getRewritedFileName(postedtime, filename);
+				
 				RewriteFileLogic dlogic=new RewriteFileLogic();
 				msg=dlogic.rewrite(base64,deleteFilePath);
 
