@@ -27,17 +27,17 @@ public class GoodCommentLogic{
 				result=exists(userId,id,source);
 
 			if(!result) {
-//				execute(userId, id,source);
 				result=execute(userId, id, source);
 				return result;
 
-			}else if(result){//counted already
+			} else if(result){
 				result=reset(userId, id,source);
 				return result;
 			}
-		}else {//counted on my oun
+		} else {
 			return false;
 		}
+		
 		return true;
 	}
 
@@ -48,46 +48,23 @@ public class GoodCommentLogic{
 		return result;
 	}
 
-    public boolean execute(String userId,String id,DataSource source){
-    	GoodonCommentDAO dao=new GoodonCommentDAO(source);
-        boolean result=dao.goodCount(userId,id);
+    	public boolean execute(String userId,String id,DataSource source){
+    		GoodonCommentDAO dao=new GoodonCommentDAO(source);
+       		boolean result=dao.goodCount(userId,id);
+      		return result;
+    	}
 
-      return result;
-    }
+    	public boolean reset(String userId,String id,DataSource source){
+    		GoodonCommentDAO dao=new GoodonCommentDAO(source);
+    		boolean result=dao.resetGoodCount(userId,id);//assertion error?
+    		return result;
+	}
 
-    public boolean reset(String userId,String id,DataSource source){
-    	GoodonCommentDAO dao=new GoodonCommentDAO(source);
-    	boolean result=dao.resetGoodCount(userId,id);//assertion error?
-
-    	return result;
-    }
-//    static boolean exists(String userId,String id,DataSource source){
-//    	GoodonCommentDAO dao=new GoodonCommentDAO(source);
-//    	boolean result=dao.goodCountIfExists(userId,id);
-//
-//    	return result;
-//    }
-//
-//    static boolean execute(String userId,String id,DataSource source){
-//    	GoodonCommentDAO dao=new GoodonCommentDAO(source);
-//    	boolean result=dao.goodCount(userId,id);
-//
-//    	return result;
-//    }
-//
-//    static boolean reset(String userId,String id,DataSource source){
-//    	GoodonCommentDAO dao=new GoodonCommentDAO(source);
-//    	boolean result=dao.resetGoodCount(userId,id);//assertion error?
-//
-//    	return result;
-//    }
-
-    public int total(String id,DataSource source){
-    	GoodonCommentDAO dao=new GoodonCommentDAO(source);
-    	int count=dao.goodCountTotal(id);
-
-    	return count;
-    }
+	public int total(String id,DataSource source){
+		GoodonCommentDAO dao=new GoodonCommentDAO(source);
+		int count=dao.goodCountTotal(id);
+		return count;
+	}
 
 
 }
