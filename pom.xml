@@ -276,14 +276,15 @@
           				<groupId>org.apache.maven.plugins</groupId>
           				<artifactId>maven-war-plugin</artifactId>
           				<version>3.2.3</version>
-          				<configuration>
+<!-- 	haven't been  used '/src/main/resources	' at the moment	 -->
+<!--           				<configuration>
             					<webResources>
               						<resource>
 								<!-- this is relative to the pom.xml directory -->
-								<directory>${basedir}/src/main/resources</directory>
+<!-- 								<directory>${basedir}/src/main/resources</directory>
               						</resource>
             					</webResources>
-          				</configuration>
+          				</configuration>  -->
         			</plugin>
         <!-- compile java8 but need to run the tests with Java 11 -->
         <!-- Runs the JUnit unit tests. Creates test reports. -->
