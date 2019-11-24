@@ -9,11 +9,11 @@ public class Account implements Serializable{
 	private int age;
 
 	public Account() {}
-	public Account(String userId,String pass) {    //Login用追加
+	public Account(String userId,String pass) {    
 		this.userId=userId;
 		this.pass=pass;
 	}
-	public Account(String userId,String pass,String name,int age) {    //引数忘れない(<-Beansにセットされる)
+	public Account(String userId,String pass,String name,int age) { 
 		this.userId=userId;
 		this.pass=pass;
 		this.name=name;
@@ -23,5 +23,5 @@ public class Account implements Serializable{
 	public String getUserId() {return userId;}
 	public String getPass() {return pass;}
 	public String getName() {return name;}
-    public int getAge() {return age;}
+    	public int getAge() {return age;}
 }
