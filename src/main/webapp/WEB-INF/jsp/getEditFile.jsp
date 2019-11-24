@@ -62,16 +62,11 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/Navigate?action=start">How to Start</a>
           <a class="dropdown-item" href="/Navigate?action=comment">How to Coments</a>
-          <!-- <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a> -->
         </div>
         </li>
       <li class="nav-item">
       	<a class="nav-link" href="/LogoutServlet" id="logout">Logout</a><br>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li> -->
     </ul>
   </div>
  </div>
@@ -79,10 +74,8 @@
 
 <div class="container-fluid">
 <div class="row">
-<!-- <div class="col-sm col-md-6 col-lg-6"> -->
 <div class="col-md-8">
 	<h2 class="my-4"><c:out value="${userId} 's previous comments"/>
-          <!-- <small>Secondary Text</small> -->
         </h2>
 <c:if test="${not empty pagedPostedList}">
 &nbsp;&nbsp;<c:out value="click title you want to edit"></c:out></c:if>
