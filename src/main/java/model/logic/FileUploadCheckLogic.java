@@ -7,17 +7,15 @@ public class FileUploadCheckLogic {
 	ErrorCheckLogic c=new ErrorCheckLogic();
 
 	public String checkTitle(String title){
-	    if(!c.checkEmpty(title)){
-	    	checkTitle="titleを入力してください。Emp";
-	    }
-	    //delete 9/17 未検証画面移遷 maybe OK
-//	    if(!c.checkLength(title)){
-//	    	checkTitle="titleを入力してください。Length";
-//	    }
-	    if(!c.checkBlank(title)){
-	    	checkTitle="titleを入力してください。Blank";
-	    }
-	    try {
+	    
+		if(!c.checkEmpty(title)){
+			checkTitle="titleを入力してください。Emp";
+		}
+		if(!c.checkBlank(title)){
+			checkTitle="titleを入力してください。Blank";
+		}
+	    	
+		try {
 			if(!c.checkLengthMax(title,65)){
 				checkTitle="title文字数を確認してください。(65文字以内)";
 
@@ -25,17 +23,22 @@ public class FileUploadCheckLogic {
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}
-	    return checkTitle;
+	    
+		return checkTitle;
 	}
 
+	
 	String checkText = null;
+	
 	public String checkText(String text){
+		
 		if(!c.checkEmpty(text)){
 			checkText="textを入力してください。Emp";
 		}
 		if(!c.checkBlank(text)){
 			checkText="textを入力してください。Bla";
 		}
+		
 		try {
 			if(!c.checkLengthMax(text,255)){
 				checkText="textの文字数を確認してください。(255文字以内)";
@@ -50,18 +53,21 @@ public class FileUploadCheckLogic {
 
 	String checkFile = null;
 	public String checkFile(Part part){
-    	if(!c.checkNull(part)){
-    		checkFile ="ファイルを添付してください。n";
-    	}
-    	try {
+    	
+		if(!c.checkNull(part)){
+    			checkFile ="ファイルを添付してください。n";
+    		}
+    		try {
 			if(!c.checkEmpty(part)){
 				checkFile ="ファイルを添付してください。";
 			}
+		
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}
-    	return checkFile;
-    }
+    	
+		return checkFile;
+	}
 }
 
 
