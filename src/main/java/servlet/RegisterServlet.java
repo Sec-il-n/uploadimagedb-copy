@@ -68,12 +68,14 @@ public class RegisterServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String to = null;
+		
 		HttpSession session = request.getSession();
+		
 		String userId=request.getParameter("userId");
 		String pass=request.getParameter("pass");
 		String name = request.getParameter("name");
 		String a=request.getParameter("age");
+		String to = null;
 		int age = 0;
 
 	    	RegisterCheckLogic logic=new RegisterCheckLogic();
@@ -95,6 +97,7 @@ public class RegisterServlet extends HttpServlet {
 			checkPass = logic.checkPass(pass);
 			checkName = logic.checkName(name);
 			checkAge = logic.checkAge(replaced);
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -103,31 +106,32 @@ public class RegisterServlet extends HttpServlet {
     			age=logic.returnNumber(replaced);
 
     		}
-    	checkZero=logic.checkAge(age);
-
-    	if(checkUserId!=null || checkPass!=null || checkName!=null || checkAge!=null || checkZero!=null) {
+		
+		checkZero=logic.checkAge(age);
+		if(checkUserId!=null || checkPass!=null || checkName!=null || checkAge!=null || checkZero!=null) {
 	    	
-		Account account=new Account(userId,pass,name,age);
-	    	request.setAttribute("checkZero",checkZero);
-	    	request.setAttribute("account",account);
-	    	request.setAttribute("checkUserId",checkUserId);
-	    	request.setAttribute("checkPass",checkPass);
-	    	request.setAttribute("checkName",checkName);
-	    	request.setAttribute("checkAge",checkAge);
-	    	to=logic.havingErrormsg();
+			Account account=new Account(userId,pass,name,age);
+			request.setAttribute("checkZero",checkZero);
+			request.setAttribute("account",account);
+			request.setAttribute("checkUserId",checkUserId);
+			request.setAttribute("checkPass",checkPass);
+			request.setAttribute("checkName",checkName);
+			request.setAttribute("checkAge",checkAge);
+			to=logic.havingErrormsg();
 
 		}else if(checkUserId==null && checkPass==null && checkName==null && checkAge==null && checkZero==null) {
 
-	    	Account account=new Account(userId,pass,name,age);
+			Account account=new Account(userId,pass,name,age);
 			session.setAttribute("account",account);
 			to=logic.notHavingErrormsg();
-	    	}
+		}
 
 		RequestDispatcher dsp=request.getRequestDispatcher(to);
 		dsp.forward(request, response);
 		doGet(request, response);
 
 	}
+
 }
 
 
