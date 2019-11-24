@@ -5,11 +5,11 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>delete conf</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>delete conf</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body id="page-top">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -51,8 +51,8 @@
 
 
 <div class="container pt-4">
-<div class="alert alert-warning mb-2" role="alert">
-<c:out value="${msg}"/></div>
+	<div class="alert alert-warning mb-2" role="alert">
+	<c:out value="${msg}"/></div>
 <div class="jumbotron">
 
 <div class="form-group">
