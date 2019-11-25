@@ -70,7 +70,6 @@
 		<input type="text" name="age" id="age" class="form-control" placeholder="with numbers"><br>
 	</div>
 	 <button type="submit" class="btn btn-secondary btn-sm">Conform</button><br>
-<!-- <input type="submit"  name="submitregister" value="確認" > -->
 </form>
 </div></div>
 <!-- footer -->
