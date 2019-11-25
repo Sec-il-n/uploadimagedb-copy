@@ -73,7 +73,6 @@
 		<input type="text" class="form-control" name="age" id="age" value="${account.age}"><br>
 	</div>
 	<button type="submit" class="btn btn-secondary btn-sm">Conform</button><br>
-<!-- <input type="submit"  value="確認" > -->
 </form>
 </div></div>
 <!-- footer -->
