@@ -74,18 +74,13 @@
 	<div class="container-fluid">
     	<div class="row">
       		<div class="col-xl-8">
-				<!-- <div class="row"> -->
 <c:if test="${not empty account.userId}">
 <c:if test="${not empty userId}"><c:out value="Welcome! "/><c:out value="${account.userId}"/><c:out value=" 's now loged in"/></c:if><br>
 </c:if><br>
 <div class="text-center">
 <h2 class="my-4"><c:out value="Photos & Comments"/>
-          <!-- <small>Secondary Text</small> -->
 </h2>
 <c:forEach var="paged" items="${pagedList}">
-<!-- wouldn't do ⇩ unless you deploy your application as ROOT -->
-<!-- x not working (will be at context =>full URL /context/upload/test.png) -->
-	<!-- <div class="card mb-3"> -->
 	<div class="card mb-3" style="max-width: 1100px;">
 
  		<div class="row no-gutters">
@@ -98,8 +93,6 @@
 		    </div>
     	</div>
     	<div class="col-md-8 col-lg-8 my-auto mx-auto">
-    	<!-- <div class="col-md-8 col-lg-8 my-auto mx-auto"> -->
-<!--         	<div class="card-body" style="max-width: 650px;" > -->
         	<div class="card-body" style="max-width: 100%;" >
 	            <h2 class="card-title">
 	            <a href="/ShowEachComment?id=${paged.id}"><c:out value="${paged.title}"/></a>
@@ -108,7 +101,6 @@
         	<div class="card-footer text-muted">
 	            <p>Posted on <c:out value="${paged.date_time}"/></p>
 	            <p>by <c:out value="${paged.userId}"/></p>
-	          <!--   <a href="#">Start Bootstrap</a> -->
         	</div>
      	</div>
         </div>
@@ -118,11 +110,9 @@
 
 <c:out value="${in}"/>&nbsp;/&nbsp;<c:out value="${total}"/> &nbsp;total<br>
 <a href="#"><i class="fas fa-arrow-alt-circle-left fa-lg"></i>before &nbsp;</a>
-<!-- <a href="#">before &nbsp;</a> -->
 <c:forEach var="t" begin="1" end="${totalPage}" step="1">
 <a class="noline" href="/PageNation?action=middle&page=${t}"><c:out value="${t}"/>&nbsp;</a>
 </c:forEach>
-<!-- <a href="/PageNation?action=after&now=1" id="after"> &nbsp; next</a> -->
 <a class="noline" href="/PageNation?action=after&now=1" id="after">&nbsp; next <i class="fas fa-arrow-alt-circle-right fa-lg"></i></a><br>
 
 <a class="noline" href="/ToLoginResult">TopPage</a>
