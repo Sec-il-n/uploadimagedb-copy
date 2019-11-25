@@ -74,14 +74,14 @@
 	<h1><c:out value="${title}"/></h1><br>
 </div><hr>
 <div class="card mb-3" style="max-width: 540px;">
-  <img src="${base64edit}" class="card-img-top" alt="">
+  	<img src="${base64edit}" class="card-img-top" alt="">
   <div class="card-body"><hr>
   	<label for="FormControlTextarea1">Comment:</label>
-    <p class="card-text"><c:out value="${text}"/></p>
-</div></div>
-<!-- <a href="/upload_image_db/ShowImages?action=show">一覧</a>一度topへ戻らせるのもアリかも -->
-<a class="btn btn-secondary btn-sm" href="/RewriteImageComplete" id="rewriteImage_complete" role="button">Complete</a>
-</div></div>
+    	<p class="card-text"><c:out value="${text}"/></p>
+</div></div>	
+	<a class="btn btn-secondary btn-sm" href="/RewriteImageComplete" id="rewriteImage_complete" role="button">Complete</a>
+</div>
+</div>
 <!-- Footer -->
  <footer class="py-5 bg-dark">
     <div class="container">
@@ -92,14 +92,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<!-- <a href="
-	<c:url value="/RewriteImage">
-	<c:param name="id" value="${y.id}"/>
-	<c:param name="title" value="${y.title}"/>
-	<c:param name="text" value="${y.text}"/>
-	<c:param name="deleteFileName" value="${y.filename}"/>
-	</c:url>
-">戻る(ブラウザ戻るEditと同等->parameter id＆Rewriteimage doget)</a><br> --!>
-<!-- <a href="/upload_image_db/ShowImages?action=edit">編集</a> -->
 </body>
 </html>
