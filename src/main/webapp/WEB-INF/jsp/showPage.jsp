@@ -75,23 +75,19 @@
 <div class="container-fluid">
     	<div class="row">
       		<div class="col-xl-8">
-				<!-- <div class="row"> -->
 <c:if test="${not empty account.userId}">
 <c:if test="${not empty userId}"><c:out value="Welcome! "/><c:out value="${account.userId}"/><c:out value=" 's now login"/></c:if><br>
 </c:if><br>
 <div class="text-center">
 <h2 class="my-4"><c:out value="Photos & Comments"/>
-          <!-- <small>Secondary Text</small> -->
         </h2>
 <c:forEach var="paged" items="${pagedList}">
 <div class="card mb-3">
-	<div class="row no-gutters">
-	<div class="row">
-<!--     <div class="col-md-4 col-lg-4 col-xl-4 my-auto mx-auto"> -->
+<div class="row no-gutters">
+<div class="row">
     <div class="col-md-4 col-lg-4 my-auto mx-auto">
     	<img class="card-img" src="https://d19elqcdc7fluw.cloudfront.net/upload/${paged.filename}" alt="Card image cap">
     </div>
-<!--     <div class="col-md-8 col-lg-4 col-xl-4 my-auto mx-auto"> -->
     <div class="col-md-8 col-lg-4 my-auto mx-auto">
           <div class="card-body">
             <h2 class="card-title">
@@ -101,24 +97,13 @@
           <div class="card-footer text-muted">
            	<p>Posted on <c:out value="${paged.date_time}"/></p>
            	<p>by <c:out value="${paged.userId}"/></p>
-          <!--   <a href="#">Start Bootstrap</a> -->
           </div>
     </div>
 
-	</div><!-- row -->
-	</div><!-- no-gritter -->
-	</div><!-- card -->
+</div>
+</div>
+</div>
 </c:forEach>
-<!-- <div class="row"> -->
-	<!-- <div class="col-md-12 col-lg-4 col-xl-4">
-     <div class="card">
-  		<div class="card-body">
-		    <h5 class="card-title">Special title treatment</h5>
-		    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		    <a href="#" class="btn btn-primary">Go somewhere</a>
-  		</div>
-  		</div>
-  	</div> -->
 		<c:out value="${in}"/>&nbsp;/&nbsp;<c:out value="${total}"/>&nbsp;total<br>
 		<a class="noline" href="/PageNation?action=before&now=${page}"><i class="fas fa-arrow-alt-circle-left fa-lg"></i>before &nbsp;</a>
 		<c:forEach var="t" begin="1" end="${totalPage}" step="1">
@@ -130,15 +115,10 @@
 		<a class="noline" href="/ShowImages?action=edit">&nbsp; &nbsp;Edit</a>
 
 	</div><!--text-sentre  -->
-</div><!-- col-xl-8 -->
+	</div><!-- col-xl-8 -->
       </div><!--row  -->
       </div><!-- no-gutters -->
-<%-- <a href="/upload_image_db/PageNation?action=before&now=${page}">前へ</a> --%>
-<!-- <a href="/upload_image_db/ShowImages?action=show">1</a> -->
-<!-- <a href="/upload_image_db/PageNation?page=2">2</a> -->
-<!-- <a href="/upload_image_db/PageNation?page=3">3</a> -->
-<!-- <a href="/upload_image_db/PageNation?page=4">4</a> -->
-<%-- <a href="/upload_image_db/PageNation?action=after&now=${page}">後へ</a> --%>
+	
 <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
