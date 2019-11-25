@@ -67,11 +67,6 @@
  </div>
 </nav>
 
-<!--
-test<br>
-<c:forEach var="test" items="${test}">
-<c:out value="${test}"/><br>
-</c:forEach> -->
 <h4>&nbsp;&nbsp;<c:out value="Would you upload your comment? "/></h4><br>
 <br>
 <div class="container pt-4">
@@ -86,12 +81,9 @@ test<br>
   	<label for="FormControlTextarea1">Comment:</label>
     <p class="card-text"><c:out value="${text}"/></p>
 </div></div>
-<!--  TITLE:<c:out value="${title}"/><br>
-TEXT:<c:out value="${text}"/><br>-->
 <hr>
 <a class="btn btn-link btn-lg noline" href="/">&nbsp;&nbsp;&nbsp;Cancel</a>
 <a class="btn btn-link btn-lg noline" href="/UploadComplete" id="post">&nbsp;&nbsp;&nbsp;Complete</a></div></div>
-<!-- <a href="/upload_image_db/ShowImages?action=edit">編集</a> -->
 <footer class="py-5 bg-dark">
    <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
