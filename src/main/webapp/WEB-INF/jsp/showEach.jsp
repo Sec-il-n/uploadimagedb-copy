@@ -77,26 +77,21 @@
  by  <c:out value="${imgb.userId}"/></p>
  <hr>
 <p> Posted on<c:out value="${imgb.date_time}"/></p><hr>
- <!-- よう編集⤵︎ -->
-<!--  <div class="card mb-3" style="max-width: 540px;"> -->
  <div class="card mb-3" style="max-width: 1100px;">
- <!-- <div class="card" style="width: 24rem;"> -->
   <img src="https://d19elqcdc7fluw.cloudfront.net/upload/${imgb.filename}" class="card-img-top" alt="">
   <div class="card-body">
     <p class="card-text"><c:out value="${imgb.text}"/></p>
-<!--   </div> -->
 </div></div>
- <%-- <a href="/GoodComment?good=${id}&by=${imgb.userId}" id="good">like  </a><c:out value="  ${count}"/><br>
- <a class="fas fa-heart fa-lg" href="/GoodComment?good=${id}&by=${imgb.userId}" id="good">  </a><c:out value="  ${count}"/><br> --%>
-
-<p><a href="/GoodComment?good=${id}&by=${imgb.userId}" id="good">
+ <p>
+ <a href="/GoodComment?good=${id}&by=${imgb.userId}" id="good">
  <i class="fas fa-heart fa-lg" ></i>
  </a>&nbsp;<c:out value="${count}"/></p><br>
 <hr></div>
- </div></div></div>
+</div></div></div>
 
  id:<c:out value="${id}"/>&nbsp;count:<c:out value="${count}"/>
  &nbsp;userid:<c:out value="${userId}"/>
+ 
  <a class="btn btn-link btn-lg noline" href="/ShowImages?action=show">&nbsp;All Comments</a>
 
 <footer class="py-5 bg-dark">
