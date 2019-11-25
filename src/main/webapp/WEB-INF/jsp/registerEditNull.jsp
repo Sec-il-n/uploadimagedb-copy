@@ -90,9 +90,6 @@ age:<c:out value="${checkZero}"/><br> --%>
 	    <c:if test="${not empty checkZero}">
 		<div class="alert alert-danger" role="alert">
 		<c:out value="${checkZero}"/></div></c:if><br>
-<%-- 	    <c:if test="${not empty checkAge}${not empty checkZero}">
-		<div class="alert alert-danger" role="alert">
-		<c:out value="${checkAge}"/><c:out value="${checkZero}"/></div></c:if><br> --%>
 		<input type="text" class="form-control" name="age" id="age" value="${newAccount.age}"><br>
 	</div>
 	<button type="submit" class="btn btn-secondary btn-sm">Conform</button><br>
