@@ -44,8 +44,6 @@
          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/Navigate?action=start">How to Start</a>
           <a class="dropdown-item" href="/Navigate?action=comment">How to Coments</a>
-          <!-- <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a> -->
         </div>
         </li>
   	</div>
