@@ -54,8 +54,6 @@
 <div class="jumbotron">
 <h4>&nbsp;&nbsp;We'll confirm your account below</h4><br>
 <p>You cannot be fixed here. If you would fix it, go back with browser.</p>
-<!-- <form action="/RegisterServlet?action=done" method="get" name="registerform"> -->
-<!-- <form name="registerform"> -->
 
 <div class="form-group">
 		<label for="userIdla">User ID</label><br>
@@ -69,7 +67,6 @@
 	    <label for="agela">Age</label><br>
 		<input type="text" name="age" id="age" class="form-control" placeholder="${account.age}"><br>
 </div>
-<!--  <button type="submit" class="btn btn-secondary btn-sm">Conform</button><br> -->
 <a href="/RegisterServlet?action=done"><button type="submit" class="btn btn-secondary btn-sm">Conform</button></a>
 <!-- </form> -->
 </div></div>
