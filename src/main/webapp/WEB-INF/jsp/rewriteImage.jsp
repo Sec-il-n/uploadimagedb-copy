@@ -75,7 +75,6 @@
 <p><c:out value="Enter the content to be overwritten and select an image."/></p><br>
 
 <FORM ACTION ="/RewriteImage" METHOD="post" ENCTYPE="MULTIPART/FORM-DATA" NAME="editform">
-<!-- <FORM ACTION ="/upload_image_db/TmpFileUpload?action=rewrite" METHOD="post" ENCTYPE="MULTIPART/FORM-DATA"> -->
 <div class="form-group">
     <label for="Inputtitle">Title:</label>
     <c:if test="${not empty checkTitle}">
